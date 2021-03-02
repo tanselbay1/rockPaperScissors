@@ -24,6 +24,7 @@ function playRound(playerSelection, computerSelection) {
         computerScore += 1;
     } else if (playerSelection == "rock" && computerSelection == "scissors") {
         message = "You win!! Rock beats Scissors";
+        playerScore += 1;
     } else if (playerSelection == "rock" && computerSelection == "rock") {
         message = "Tie! No points";
     } else {
@@ -32,6 +33,7 @@ function playRound(playerSelection, computerSelection) {
             computerScore += 1;
         } else if (playerSelection == "paper" && computerSelection == "rock") {
             message = "You win!! Paper beats Rock";
+            playerScore += 1;
         } else if (playerSelection == "paper" && computerSelection == "paper") {
             message = "Tie! No points";
         } else {
@@ -40,30 +42,34 @@ function playRound(playerSelection, computerSelection) {
                 computerScore += 1;
             } else if (playerSelection == "scissors" && computerSelection == "paper") {
                 message = "You win!! Scissors beats Paper";
+                playerScore += 1;
             } else if (playerSelection == "scissors" && computerSelection == "scissors") {
                 message = "Tie! No points";
             } else {
-                message = "Something terrible happened!";
+                message = "Please enter Rock, Paper or Scissors!";
             }
         }
     }
-    console.log(message);
+    return message;
 }
 
 function game() {
     
-    for(let i = 0; i<5; i++) {
-        playRound(playerSelection, computerSelection);
+    for(let i = 0; i<5; i++) {           
+        const playerSelection = prompt("Rock, Paper, Scissors?").toLowerCase();
+        const computerSelection = computerPlay();
+        console.log(playRound(playerSelection, computerSelection));
+        
     }
+
     if (playerScore > computerScore) {
         return `You win! Your Score: ${playerScore} and Computer Score: ${computerScore}`;
     } else if (playerScore < computerScore) {
         return `You lose! Your Score: ${playerScore} and Computer Score: ${computerScore}`;
+    } else {
+        return `Tie! Your Score: ${playerScore} and Computer Score: ${computerScore}`;
     }
 }
 
-
-const playerSelection = prompt("Rock, Paper, Scissors?").toLowerCase();
-const computerSelection = computerPlay();
 
 console.log(game());
