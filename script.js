@@ -101,7 +101,7 @@ buttonContainer.addEventListener('click', function(e){
         setTimeout(gameRestart, 2000);
     } else if (computerScore >= 5) {
         winner.innerText = "You LOSE!!";
-        setTimeout(gameRestart, 2000);
+        setTimeout(gameRestart, 3000);
     }
     // console.log(results); Again, for testing.
 })

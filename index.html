@@ -5,17 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="buttonContainer">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+        <button id="rock" class="button">Rock
+            <br>🪨
+        </button>
+        <button id="paper" class="button">Paper
+            <br>📃
+        </button>
+        <button id="scissors" class="button">Scissors
+            <br>✂️
+        </button>
     </div>
-    <div id="message">LET THE GAME BEGIN</div>
-    <div id="results"></div>
-    <div id="winner"></div>
-    <button id="reset">Restart Game</button>
-    <script src="script.js"></script>
+
+    <div id="textBox">
+        <div id="message">LET THE GAME BEGIN</div>
+        <div id="results"></div>
+        <div id="winner"></div>
+    </div>
+
+    <button id="reset" class="button">Restart Game</button>
+    <img id="background-img" src="images/kobby-mendez-WZGdx3K3_tw-unsplash.jpg" alt="background-img">
+
+
+    <script src="script.js"></script>  
 </body>
 </html>
